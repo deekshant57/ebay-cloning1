@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>ebay</title>
+
+    <link rel="stylesheet" href="./style/home1.css" />
+
+    <!-- <script src="home.js"></script> -->
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="navbar1"></div>
+
+      <!-- -------------------------------------------------------------------- -->
+
+      <div id="navbar2"></div>
+
+      <div id="nav3" class="shop-dropdown">
+        
+    </div>
+
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img
+          src="https://i.ebayimg.com/images/g/F6QAAOSwQcJfIpcl/s-l1600.webp"
+          style="width: 100%"
+        />
+        <h1>
+          Sell Your <br />
+          Products
+        </h1>
+
+        <p>to 182 million customers across <br />190 Countries</p>
+        <button id="slider_btn"><b>Sell Globaly</b></button>
+      </div>
+
+      <div class="mySlides fade">
+        <img
+          src="https://i.ebayimg.com/images/g/ZNwAAOSwcuJfIpcl/s-l1600.webp"
+          style="width: 100%"
+        />
+        <h2>
+          Looking to shop <br />
+          at eBay?
+        </h2>
+
+        <h6>
+          Pick from the widest range of <br />
+          products from Global Sellers
+        </h6>
+        <button id="slider_btn"><b>Shop Now</b></button>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      <div style="text-align: center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <!-- ------------------------------------------------------------------------------------------------ -->
+
+    <hr />
+    <div id="footer_c"></div>
+    
+  </body>
+</html>
+<script type="module">
+  var slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+  }
+
+  // import Navbar
+  import navbar from "./components/navbar.js";
+  import navbar1 from "./components/navbar1.js"
+  import navbar3 from "./components/navbar3.js"
+  import footer_c from "./components/footer_c.js"
+  let nav2 = document.getElementById("navbar2");
+  nav2.innerHTML = navbar();
+
+  let nav1 = document.getElementById("navbar1");
+  nav1.innerHTML = navbar1()
+
+  let nav3 = document.getElementById("nav3");
+  nav3.innerHTML = navbar3();
+
+  let clickbtn = document.querySelector("#shopbtn");
+  clickbtn.addEventListener("click",()=>{
+    window.location.href = "products.html";
+  })
+
+  let footer = document.getElementById("footer_c");
+  footer.innerHTML = footer_c();
+  
+</script>
