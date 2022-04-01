@@ -2,18 +2,18 @@
 document.querySelector("form").addEventListener("submit", signin);
 // var email_data=JSON.parse(localStorage.getItem("login_Datas"));
 
-var count = 0;
+// var count = 0;
 async function signin(event) {
   event.preventDefault();
 
   let data = {
-    email: localStorage.getItem("email"),
+    sellerEmail: localStorage.getItem("email"),
     password: document.getElementById("password").value,
   };
   console.log(data);
   data = JSON.stringify(data);
 
-  let result = await fetch("http://localhost:4000/login", {
+  let result = await fetch("http://localhost:4000/loginSeller", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -28,7 +28,7 @@ async function signin(event) {
   if (response.token) {
     console.log("loggedin");
     // localStorage.setItem("firstName", response.firstName);
-    window.location.href = "home.html";
+    window.location.href = "sellerproduct.html";
   } else {
     alert(response.message);
   }
