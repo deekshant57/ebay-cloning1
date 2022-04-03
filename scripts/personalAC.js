@@ -35,6 +35,11 @@ function formSubmit(event) {
         const data = await response.json();
         // enter you logic when the fetch is successful
         console.log(data);
+        if (data.token) {
+          window.location.href = "signin.html";
+        } else {
+          alert(data.message);
+        }
       } catch (error) {
         // enter your logic for when there is an error (ex. error toast)
 

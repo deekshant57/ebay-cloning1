@@ -83,17 +83,17 @@
       <div id="part2">
         <div class="subtotal">
           <p>Subtotal(1 item)</p>
-          <p>US $143</p>
+          <p id="totalItemsPrice">US $143</p>
         </div>
         <div>
           <div class="subtotal">
             <p>Shipping</p>
-            <p>Free</p>
+            <p id="shippingCharges">Free</p>
           </div>
           <hr />
           <div class="subtotal">
             <h4>Order total</h4>
-            <h4>US $143.45</h4>
+            <h4 id="totalPriceToPay">US $143.45</h4>
           </div>
           <button id="ttl-btn">
             <span><i class="fa fa-lock"></i> </span> Confirm and pay
@@ -114,12 +114,19 @@
   items.map((elem) => {
     let main = document.getElementById("checkout-items");
     let card = document.createElement("div");
+    card.id = "product-card";
     let img = document.createElement("img");
-    img.src = elem.image;
+    img.src = elem.productImageURL;
     let title = document.createElement("p");
-    title.textContent = elem.title;
+    title.textContent = elem.productTitle;
     let price = document.createElement("h6");
-    price.textContent = `$ ${elem.price.toFixed(2)}`;
+    price.textContent = `Price : $ ${elem.productPrice.toFixed(2)}`;
+
+    let shippingCharges = document.createElement("h6");
+
+    shippingCharges.textContent = `Shipping : $ ${elem.shippingCharges.toFixed(
+      2
+    )}`;
 
     // let btn = document.createElement("button");
     // btn.textContent = "Add to cart";
@@ -129,16 +136,31 @@
     //   localStorage.setItem("cart", JSON.stringify(cart));
     // });
 
-    card.append(img, title, price);
+    card.append(img, title, price, shippingCharges);
     main.append(card);
   });
 
   let totalprice = items.reduce((ac, cv) => {
     // console.log(ac, cv.price);
-    return ac + cv.price;
+    return ac + cv.productPrice;
   }, 0);
+
+  let totalShippingPrice = items.reduce((ac, cv) => {
+    // console.log(ac, cv.price);
+    return ac + cv.shippingCharges;
+  }, 0);
+
+  console.log(totalShippingPrice);
   // console.log(totalprice);
-  let confirm_btn = document.getElementById("ttl-btn");
+  let confirm_btn = document.getElementById("totalPriceToPay");
+  confirm_btn.textContent = `$ ${totalprice + totalShippingPrice}`;
+
+  let shippingChargesBtn = document.getElementById("shippingCharges");
+  shippingChargesBtn.textContent = `$ ${totalShippingPrice}`;
+
+  let totalItemsPrice = document.getElementById("totalItemsPrice");
+  totalItemsPrice.textContent = `$ ${totalprice}`;
+
   confirm_btn.addEventListener("click", () => {
     alert("Order Successfully Placed !");
   });
