@@ -13,7 +13,7 @@ async function signin(event) {
   console.log(data);
   data = JSON.stringify(data);
 
-  let result = await fetch("http://localhost:4000/login", {
+  let result = await fetch("http://ec2-34-222-169-2.us-west-2.compute.amazonaws.com:4000/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
