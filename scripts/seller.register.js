@@ -18,7 +18,7 @@ function formSubmit(event) {
   } else {
     const asyncPostCall = async () => {
       try {
-        const response = await fetch("http://localhost:4000/registerSeller", {
+        const response = await fetch("http://ec2-34-222-169-2.us-west-2.compute.amazonaws.com:4000/registerSeller", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
