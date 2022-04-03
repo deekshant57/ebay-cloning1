@@ -24,7 +24,7 @@ const submitForm = () => {
     alert("Input cannot be left blank");
   } else {
     const postProduct = async () => {
-      let response = await fetch("http://localhost:4000/product", {
+      let response = await fetch("http://ec2-34-222-169-2.us-west-2.compute.amazonaws.com:4000/product", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
