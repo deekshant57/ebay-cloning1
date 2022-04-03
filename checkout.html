@@ -152,14 +152,16 @@
 
   console.log(totalShippingPrice);
   // console.log(totalprice);
-  let confirm_btn = document.getElementById("totalPriceToPay");
-  confirm_btn.textContent = `$ ${totalprice + totalShippingPrice}`;
+  let priceBtn = document.getElementById("totalPriceToPay");
+  priceBtn.textContent = `$ ${totalprice + totalShippingPrice}`;
 
   let shippingChargesBtn = document.getElementById("shippingCharges");
   shippingChargesBtn.textContent = `$ ${totalShippingPrice}`;
 
   let totalItemsPrice = document.getElementById("totalItemsPrice");
   totalItemsPrice.textContent = `$ ${totalprice}`;
+
+  let confirm_btn = document.getElementById("ttl-btn");
 
   confirm_btn.addEventListener("click", () => {
     alert("Order Successfully Placed !");

@@ -35,6 +35,13 @@ function formSubmit(event) {
         const data = await response.json();
         // enter you logic when the fetch is successful
         console.log(data);
+
+        if (data.token) {
+          console.log("loggedin");
+          window.location.href = "sellerSignin.html";
+        } else {
+          alert(data.message);
+        }
       } catch (error) {
         // enter your logic for when there is an error (ex. error toast)
 
@@ -43,13 +50,6 @@ function formSubmit(event) {
     };
 
     asyncPostCall();
-
-    if (data.token) {
-      console.log("loggedin");
-      window.location.href = "sellerSignin.html";
-    } else {
-      alert(data.message);
-    }
 
     // if (!login_data) login_data = [];
     // login_data.forEach((user) => {
