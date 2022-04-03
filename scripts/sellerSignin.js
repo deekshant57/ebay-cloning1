@@ -27,7 +27,7 @@ async function signin() {
   console.log("hello!!!");
   let email = document.getElementById("email").value;
   localStorage.setItem("email", email);
-  window.location.href = "password.html";
+  window.location.href = "sellerPassword.html";
 
   // let result = await fetch("http://localhost:4000/login", {
   //   method: "POST",

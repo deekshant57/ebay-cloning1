@@ -1,24 +1,24 @@
-document.querySelector("form"), addEventListener("submit", formSubmit);
+document.querySelector("#formSubmit"), addEventListener("submit", formSubmit);
 
 var login_data = JSON.parse(localStorage.getItem("login_Datas")) || [];
 function formSubmit(event) {
   event.preventDefault();
-  var firstname = document.getElementById("firstname").value;
-  var lastname = document.getElementById("lastname").value;
-  var email = document.getElementById("email").value;
-  var pass = document.getElementById("password").value;
-
+  var sellerName = document.getElementById("sellername").value;
+  var sellerEmail = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+  var location = document.getElementById("location").value;
+  console.log(sellerName, sellerEmail, password, location);
   if (
-    firstname.length == 0 ||
-    lastname.length == 0 ||
-    email.length == 0 ||
-    pass.length == 0
+    sellerName.length == 0 ||
+    sellerEmail.length == 0 ||
+    password.length == 0 ||
+    location.length == 0
   ) {
     alert("Input can not be left blank");
   } else {
     const asyncPostCall = async () => {
       try {
-        const response = await fetch("http://localhost:4000/register", {
+        const response = await fetch("http://localhost:4000/registerSeller", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -26,17 +26,19 @@ function formSubmit(event) {
           },
           body: JSON.stringify({
             // your expected POST request payload goes here
-            firstName: firstname,
-            lastName: lastname,
-            email: email,
-            password: pass,
+            sellerName: sellerName,
+            sellerEmail: sellerEmail,
+            password: password,
+            sellerLocation: location,
           }),
         });
         const data = await response.json();
         // enter you logic when the fetch is successful
         console.log(data);
+
         if (data.token) {
-          window.location.href = "signin.html";
+          console.log("loggedin");
+          window.location.href = "sellerSignin.html";
         } else {
           alert(data.message);
         }
