@@ -1,5 +1,3 @@
-# ebay-clone
-
 
 
 #  <h1><a href="https://ebay-clone-web15.netlify.app/">Ebay </a> Website Clone (Learning Purpose)</h1>
