@@ -4,22 +4,23 @@
 
 # Duration : 1 Week 
 
-
 # <h2>About eBay Website : </h2>
 
 <a href="https://ebay-clone-web15.netlify.app/">EBAY </a>  is an multinational e-commerce corporation facilitates consumer-to-consumer and business-to-consumer sales through its website.
 
 
 # <h2>Home Page : </h2>
-![alt text]()
-# <h2>Exclusive Movies page : </h2>
-![alt text]()
-# <h2>Sign up / Login Page : </h2>
-![alt text]()
-# <h2>Buy Page : </h2>
-![alt text]()
-# <h2>About Section : </h2>
-![alt text]()
+![alt text](https://github.com/deekshant57/ebay-cloning1/blob/main/ebay_img/ebay.png)
+# <h2>Signup page : </h2>
+![alt text](https://github.com/deekshant57/ebay-cloning1/blob/main/ebay_img/signup.png)
+# <h2>Signin / Login Page : </h2>
+![alt text](https://github.com/deekshant57/ebay-cloning1/blob/main/ebay_img/signin.png)
+# <h2>Product Page : </h2>
+![alt text](https://github.com/deekshant57/ebay-cloning1/blob/main/ebay_img/productPage.png)
+# <h2>Checkout page : </h2>
+![alt text](https://github.com/deekshant57/ebay-cloning1/blob/main/ebay_img/checkout.png)
+# <h2>Footer section : </h2>
+![alt text](https://github.com/deekshant57/ebay-cloning1/blob/main/ebay_img/footer.png)
 
 ## Technologies & Tool & API we used :
 
